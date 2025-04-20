@@ -32,12 +32,12 @@ stages:
         echo "Running tests..."
         npm run test --if-present
       displayName: 'Install, build & test'
-      workingDirectory: '$(Build.SourcesDirectory)/nodejs-azure-cicd'
+      workingDirectory: '$(Build.SourcesDirectory)'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/nodejs-azure-cicd'
+        rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
         archiveType: zip
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
